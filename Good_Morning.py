@@ -20,10 +20,10 @@ def main():
     paragraphs = re.findall(r'<p>(.*?)</p>', str(respData))
     weather = (paragraphs[0])
 
-    greeting = ("Good morning Parker. The weather today will be" + weather)
+    greeting = (f"Good morning Parker. The weather today will be {weather}")
     tts = gTTS(text = greeting, lang = 'en')
     tts.save("D:/python/test.mp3")
-
+#play music alarm time
     mixer.init()
     mixer.music.load('D:/python/test.mp3')
     mixer.music.play()
